@@ -1,0 +1,126 @@
+{% extends "prescription/base.html" %}
+
+{% block content %}
+    <!-- Prescribe Medicine Card -->
+    <div class="card mx-auto">
+        <div class="card-header">
+            Fill in your symptoms
+        </div>
+        <div class="card-body">
+            <form method="post" action="{% url 'prescribe-medicine' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="diarrhoea">
+                        1. Do you have any diarrhoea?
+                    </label>
+                    <select class="form-control" id="diarrhoea" name="diarrhoea" required>
+                      <option value="">-----------</option>
+                      <option value="0">No</option>
+                      <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="rash">
+                        2. Do you have any rash?
+                    </label>
+                    <select class="form-control" id="rash" name="rash" required>
+                      <option value="">-----------</option>
+                      <option value="0">No</option>
+                      <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="nausea_and_vomiting">
+                        3. Are you vomiting or do you experience nausea?
+                    </label>
+                    <select class="form-control" id="nausea_and_vomiting" name="nausea_and_vomiting" required>
+                      <option value="">-----------</option>
+                      <option value="0">No</option>
+                      <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fever">
+                        4. Do you have any fever?
+                    </label>
+                    <select class="form-control" id="fever" name="fever" required>
+                      <option value="">-----------</option>
+                      <option value="0">No</option>
+                      <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dehydration">
+                        5. Are you experiencing dehydration of the body?
+                    </label>
+                    <select class="form-control" id="dehydration" name="dehydration" required>
+                      <option value="">-----------</option>
+                      <option value="0">No</option>
+                      <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="headache">
+                        6. Do you have any headache?
+                    </label>
+                    <select class="form-control" id="headache" name="headache" required>
+                      <option value="">-----------</option>
+                      <option value="0">No</option>
+                      <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="muscle_cramps">
+                        7. Do you have any muscle cramps?
+                    </label>
+                    <select class="form-control" id="muscle_cramps" name="muscle_cramps" required>
+                      <option value="">-----------</option>
+                      <option value="0">No</option>
+                      <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="body_aches">
+                        8. Do you have any body aches?
+                    </label>
+                    <select class="form-control" id="body_aches" name="body_aches" required>
+                      <option value="">-----------</option>
+                      <option value="0">No</option>
+                      <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="shock">
+                        9. Have you been experiencing any body shock?
+                    </label>
+                    <select class="form-control" id="shock" name="shock" required>
+                      <option value="">-----------</option>
+                      <option value="0">No</option>
+                      <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="breathing_difficulties">
+                        10. Do you have any breathing difficulties?
+                    </label>
+                    <select class="form-control" id="breathing_difficulties" name="breathing_difficulties">
+                      <option value="">-----------</option>
+                      <option value="0">No</option>
+                      <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="blood_in_waste">
+                        11. Do you have any blood in your stool or urine?
+                    </label>
+                    <select class="form-control" id="blood_in_waste" name="blood_in_waste" required>
+                      <option value="">-----------</option>
+                      <option value="0">No</option>
+                      <option value="1">Yes</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block mt-5">Prescribe Medicine</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
